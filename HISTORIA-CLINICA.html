@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuestionario de historia clínica para pacientes, incluyendo alergias, enfermedades y antecedentes médicos.">
+    <title>Cuestionario de Historia Clínica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e9ecef;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background: linear-gradient(45deg, #2C3E50, #3498DB);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 700;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #ECF0F1 !important;
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: #ECF0F1 !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffffff !important;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .navbar-toggler {
+            border-color: #ECF0F1;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-nav {
+                background-color: rgba(44, 62, 80, 0.9);
+                padding: 10px;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        h4 {
+            color: #495057;
+            margin-top: 25px;
+            font-weight: 700;
+        }
+
+        .form-check-label,
+        .form-label {
+            color: #495057;
+        }
+
+        .btn-primary {
+            background-color: #4a90e2;
+            border-color: #357ABD;
+        }
+
+        .btn-primary:hover {
+            background-color: #357ABD;
+            border-color: #2C6EA4;
+        }
+
+        .sticky-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+        }
+
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-notes-medical"></i> Historia Clínica
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="HISTORIA-CLINICA.html">
+                            <i class="fa-solid fa-file-medical"></i> Historia Clínica
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="HISTORIA-CLINICA-INVESTIGACION.html">
+                            <i class="fa-solid fa-microscope"></i> Investigación
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="CIE-10-PROCEDIMIENTOS.html">
+                            <i class="fa-solid fa-book-medical"></i> CIE-10
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <h2><i class="fa-solid fa-file-medical-alt"></i> Cuestionario de Historia Clínica</h2>
+        <form id="cuestionario-historia-clinica-form">
+            <h4><i class="fa-solid fa-allergies"></i> Alergias</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="alergia-antibiotico">
+                <label class="form-check-label" for="alergia-antibiotico">Alergia a antibióticos</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="alergia-anestesia">
+                <label class="form-check-label" for="alergia-anestesia">Alergia a anestesia</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sin-alergias">
+                <label class="form-check-label" for="sin-alergias">Sin alergias</label>
+            </div>
+            <hr>
+            <h4><i class="fa-solid fa-stethoscope"></i> Enfermedades</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="asma">
+                <label class="form-check-label" for="asma">Asma</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="diabetes">
+                <label class="form-check-label" for="diabetes">Diabetes</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hipertension">
+                <label class="form-check-label" for="hipertension">Hipertensión</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="vih">
+                <label class="form-check-label" for="vih">VIH/SIDA</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sin-enfermedades">
+                <label class="form-check-label" for="sin-enfermedades">Sin enfermedades</label>
+            </div>
+            <hr>
+            <h4><i class="fa-solid fa-user-md"></i> Antecedentes Personales y Patológicos</h4>
+            <div class="mb-3">
+                <label for="otras-enfermedades" class="form-label">¿Otras enfermedades no mencionadas?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sin-otras-enfermedades">
+                    <label class="form-check-label" for="sin-otras-enfermedades">Sin otras enfermedades</label>
+                </div>
+                <textarea class="form-control" id="otras-enfermedades" rows="3"></textarea>
+            </div>
+            <hr>
+            <!-- Botón de Enviar Fijo -->
+            <button type="submit" class="btn btn-primary sticky-btn" aria-label="Enviar formulario">
+                <i class="fa-solid fa-paper-plane"></i> Enviar
+            </button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function validarSeleccion(inputPrefix, noneId, errorMessage) {
+            const seleccionados = document.querySelectorAll(`input[type="checkbox"][id^="${inputPrefix}"]:checked`).length > 0 || document.getElementById(noneId).checked;
+            if (!seleccionados) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: errorMessage,
+                });
+                return false;
+            }
+            return true;
+        }
+
+        document.getElementById('cuestionario-historia-clinica-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const alergiasValido = validarSeleccion('alergia-', 'sin-alergias', 'Por favor, seleccione al menos una alergia o marque "Sin alergias".');
+            const enfermedadesValido = validarSeleccion('asma', 'sin-enfermedades', 'Por favor, seleccione al menos una enfermedad o marque "Sin enfermedades".');
+
+            const otrasEnfermedades = document.getElementById('otras-enfermedades').value.trim();
+            const otrasEnfermedadesValido = otrasEnfermedades !== '' || document.getElementById('sin-otras-enfermedades').checked;
+
+            if (!otrasEnfermedadesValido) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Por favor, complete el campo de otras enfermedades o marque "Sin otras enfermedades".',
+                });
+            } else if (alergiasValido && enfermedadesValido) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Formulario enviado',
+                    text: 'La información ha sido registrada correctamente.',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.reset();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
