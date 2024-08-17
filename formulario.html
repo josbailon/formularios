@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Paciente</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados */
+        .table-bordered td, .table-bordered th {
+            border: 2px solid black; /* Bordes de la tabla */
+        }
+
+        .header-cell {
+            background-color: #ffb6c1; /* Color rosa claro */
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .sub-header-cell {
+            background-color: #90ee90; /* Color verde claro */
+            text-align: center;
+        }
+
+        .input-cell {
+            background-color: #f0f0f0; /* Color de fondo de entrada */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Formulario de Paciente</h2>
+        <table class="table table-bordered">
+
+            <tr>
+                <td colspan="3" class="sub-header-cell">nombre de paciente </td>
+                <td colspan="4" class="sub-header-cell">iD de pacionete y CLÍNICA</td>
+                <td colspan="5" class="sub-header-cell">telefono del paciente</td>
+            </tr>
+            
+            <tr>
+                <td colspan="3" class="input-cell">
+                    <input type="text" class="form-control" placeholder="Ingrese nombre de pacientes">
+                </td>
+                <td colspan="4" class="input-cell">
+                    <input type="text" class="form-control" placeholder="Ingrese el número de historia clínica">
+                </td>
+                <td colspan="5" class="input-cell">
+                    <input type="text" class="form-control" placeholder="Ingrese el número de pacinete ">
+                </td>
+            </tr>
+            
+            <!-- Segunda fila -->
+            <tr>
+                <td colspan="3" class="sub-header-cell">FECHA DE NACIMIENTO</td>
+                <td colspan="4" class="sub-header-cell">NÚMERO DE HISTORIA CLÍNICA</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="input-cell">
+                    <input type="date" class="form-control">
+                </td>
+                <td colspan="4" class="input-cell">
+                    <input type="text" class="form-control" placeholder="Ingrese el número de historia clínica">
+                </td>
+            </tr>
+            <!-- Tercera fila -->
+            <tr>
+                <td colspan="4" class="sub-header-cell">EDAD</td>
+                <td colspan="3" class="sub-header-cell">SEXO</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="input-cell">
+                    <input type="number" class="form-control" placeholder="Ingrese la edad">
+                </td>
+                <td colspan="3" class="input-cell">
+                    <select class="form-select">
+                        <option selected>Seleccione...</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- Cuarta fila -->
+            <tr>
+                <td colspan="7" class="sub-header-cell">DIRECCIÓN</td>
+            </tr>
+            <tr>
+                <td colspan="7" class="input-cell">
+                    <input type="text" class="form-control" placeholder="Ingrese la dirección">
+                </td>
+            </tr>
+            <!-- Quinta fila -->
+            <tr>
+                <td colspan="4" class="sub-header-cell">TELÉFONO</td>
+                <td colspan="3" class="sub-header-cell">EMAIL</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="input-cell">
+                    <input type="tel" class="form-control" placeholder="Ingrese el teléfono">
+                </td>
+                <td colspan="3" class="input-cell">
+                    <input type="email" class="form-control" placeholder="Ingrese el email">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
