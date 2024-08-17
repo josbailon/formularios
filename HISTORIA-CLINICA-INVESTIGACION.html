@@ -257,13 +257,97 @@
             const mejillas = document.getElementById('mejillas').value.trim();
             const paladar = document.getElementById('paladar').value.trim();
 
-            if (!nombre || !fechaNacimiento || !sexo || !motivoConsulta) {
+            
+            
+          /*  if (!nombre || !fechaNacimiento || !sexo || !motivoConsulta) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Campos requeridos',
                     text: 'Por favor, complete todos los campos requeridos.',
                 });
-            } else {
+            } */
+            if (!nombre || !fechaNacimiento || !sexo || !motivoConsulta || !presionArterial || !frecuenciaCardiaca || !frecuenciaRespiratoria || !temperatura || !labios || !mejillas || !paladar) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Campos requeridos',
+                    text: 'Por favor, complete todos los campos requeridos.',
+                });
+            } else
+            if (nombre.length < 3) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Nombre inválido',
+                    text: 'Por favor, ingrese un nombre válido.',
+                });
+            } else if (telefono && telefono.length < 7) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Teléfono inválido',
+                    text: 'Por favor, ingrese un teléfono válido.',
+                });
+            } else if (ocupacion && ocupacion.length < 3) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ocupación inválida',
+                    text: 'Por favor, ingrese una ocupación válida.',
+                });
+            } else if (unidadAtencion && unidadAtencion.length < 3) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Unidad de Atención inválida',
+                    text: 'Por favor, ingrese una unidad de atención válida.',
+                });
+            } else if (motivoConsulta.length < 10) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Motivo de Consulta inválido',
+                    text: 'Por favor, ingrese un motivo de consulta válido.',
+                });
+            } else if (presionArterial.length < 3) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Presión Arterial inválida',
+                    text: 'Por favor, ingrese una presión arterial válida.',
+                });
+            } else if (frecuenciaCardiaca < 40 || frecuenciaCardiaca > 200) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Frecuencia Cardiaca inválida',
+                    text: 'Por favor, ingrese una frecuencia cardiaca válida.',
+                });
+            } else if (frecuenciaRespiratoria < 10 || frecuenciaRespiratoria > 40) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Frecuencia Respiratoria inválida',
+                    text: 'Por favor, ingrese una frecuencia respiratoria válida.',
+                });
+            } else if (temperatura < 35 || temperatura > 42) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Temperatura inválida',
+                    text: 'Por favor, ingrese una temperatura válida.',
+                });
+            } else if (labios.length < 3) {
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Labios inválidos',
+                    text: 'Por favor, ingrese un labio válido.',
+                });
+            } else if (mejillas.length < 3) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Mejillas inválidas',
+                    text: 'Por favor, ingrese una mejilla válida.',
+                });
+            } else if (paladar.length < 3) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Paladar inválido',
+                    text: 'Por favor, ingrese un paladar válido.',
+                });
+            }
+            else {
                 Swal.fire({
                     icon: 'success',
                     title: 'Formulario enviado',
