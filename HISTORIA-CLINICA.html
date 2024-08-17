@@ -248,6 +248,19 @@
             const otrasEnfermedades = document.getElementById('otras-enfermedades').value.trim();
             const otrasEnfermedadesValido = otrasEnfermedades !== '' || document.getElementById('sin-otras-enfermedades').checked;
 
+          if (!alergiasValido) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Por favor, seleccione al menos una alergia o marque "Sin alergias".',
+                });
+            } else if (!enfermedadesValido) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Por favor, seleccione al menos una enfermedad o marque "Sin enfermedades".',
+                });
+            } else
             if (!otrasEnfermedadesValido) {
                 Swal.fire({
                     icon: 'error',
