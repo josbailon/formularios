@@ -9,128 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #e9ecef;
-            color: #212529;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar {
-            background: linear-gradient(45deg, #2C3E50, #3498DB);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            color: #ffffff !important;
-            font-weight: 700;
-            font-size: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-brand:hover {
-            color: #ECF0F1 !important;
-            transform: scale(1.05);
-        }
-
-        .nav-link {
-            color: #ECF0F1 !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #ffffff !important;
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .navbar-toggler {
-            border-color: #ECF0F1;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        @media (max-width: 991.98px) {
-            .navbar-nav {
-                background-color: rgba(44, 62, 80, 0.9);
-                padding: 10px;
-                border-radius: 5px;
-                margin-top: 10px;
-            }
-        }
-
-        .container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 40px;
-            margin-top: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-        }
-
-        h2 {
-            color: #4a90e2;
-            margin-bottom: 30px;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        h4 {
-            color: #495057;
-            margin-top: 25px;
-            font-weight: 700;
-        }
-
-        .form-check-label,
-        .form-label {
-            color: #495057;
-        }
-
-        .btn-primary {
-            background-color: #4a90e2;
-            border-color: #357ABD;
-        }
-
-        .btn-primary:hover {
-            background-color: #357ABD;
-            border-color: #2C6EA4;
-        }
-
-        .sticky-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        input:focus,
-        textarea:focus {
-            border-color: #4a90e2;
-            box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
-        }
-
-        hr {
-            margin: 20px 0;
-            border: 0;
-            border-top: 1px solid #dee2e6;
-        }
-    </style>
+   <link rel="stylesheet" href="historia-clinica.css">
 </head>
 
 <body>
@@ -216,70 +95,395 @@
                 <textarea class="form-control" id="otras-enfermedades" rows="3"></textarea>
             </div>
             <hr>
-            <!-- Botón de Enviar Fijo -->
-            <button type="submit" class="btn btn-primary sticky-btn" aria-label="Enviar formulario">
-                <i class="fa-solid fa-paper-plane"></i> Enviar
-            </button>
-        </form>
+            <!-- Preguntas -->
+            <h4><i class="fa-solid fa-heartbeat"></i> HA NOTADO/ EXPERIMENTADO</h4>
+            <form id="cuestionario-experiencia-form">
+                <div class="form-group">
+                    <label class="form-check-label">¿Presión o dolor de pecho al hacer ejercicio?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="presion-pecho-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="presion-pecho-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="presion-pecho-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="presion-pecho-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Tobillos hinchados?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tobillos-hinchados-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="tobillos-hinchados-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tobillos-hinchados-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="tobillos-hinchados-no">No</label>
+                    </div>
+                </div>  
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Falta de aliento o dificultad para respirar al hacer ejercicio leve?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="falta-aliento-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="falta-aliento-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="falta-aliento-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="falta-aliento-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Se queda sin aliento cuando se tumba o necesita más almohadas cuando duerme?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sin-aliento-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="sin-aliento-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sin-aliento-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="sin-aliento-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Reciente pérdida de peso, fiebre, sudor en la noche?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="perdida-peso-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="perdida-peso-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="perdida-peso-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="perdida-peso-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Tos persistente?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tos-persistente-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="tos-persistente-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tos-persistente-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="tos-persistente-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Tos con sangre?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tos-sangre-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="tos-sangre-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tos-sangre-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="tos-sangre-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Problemas de coagulación o hemorragias?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="coagulacion-hemorragias-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="coagulacion-hemorragias-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="coagulacion-hemorragias-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="coagulacion-hemorragias-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Presenta hematomas, moretones o cardenales con facilidad?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hematomas-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="hematomas-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hematomas-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="hematomas-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Mareo?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mareo-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="mareo-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mareo-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="mareo-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Dolor de cabeza?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dolor-cabeza-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dolor-cabeza-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dolor-cabeza-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dolor-cabeza-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Desmayo o pérdida de la consciencia?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="desmayo-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="desmayo-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="desmayo-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="desmayo-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Convulsiones?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="convulsiones-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="convulsiones-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="convulsiones-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="convulsiones-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Visión borrosa?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="vision-borrosa-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="vision-borrosa-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="vision-borrosa-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="vision-borrosa-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Dificultad para ver bien?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dificultad-ver-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dificultad-ver-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dificultad-ver-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dificultad-ver-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Problemas nasales?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="problemas-nasales-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="problemas-nasales-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="problemas-nasales-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="problemas-nasales-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Ruidos o zumbidos en los oídos?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="ruidos-oidos-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="ruidos-oidos-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="ruidos-oidos-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="ruidos-oidos-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Dificultad para tragar?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dificultad-tragar-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dificultad-tragar-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dificultad-tragar-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dificultad-tragar-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Diarrea?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="diarrea-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="diarrea-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="diarrea-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="diarrea-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Estreñimiento?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="est constipation-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="estreñimiento-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="estreñimiento-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="estreñimiento-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Sangre en las heces?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sangre-heces-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="sangre-heces-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sangre-heces-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="sangre-heces-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Vómitos?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="vomitos-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="vomitos-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="vomitos-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="vomitos-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Náuseas?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="nausias-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="nausias-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="nausias-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="nausias-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Ictericia?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="ictericia-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="ictericia-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="ictericia-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="ictericia-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Sed excesiva?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sed-excesiva-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="sed-excesiva-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sed-excesiva-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="sed-excesiva-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Orina más de 6 veces al día?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="orina-mas-seis-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="orina-mas-seis-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="orina-mas-seis-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="orina-mas-seis-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Boca seca?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="boca-seca-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="boca-seca-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="boca-seca-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="boca-seca-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Dificultad al orinar?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dificultad-orinar-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dificultad-orinar-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dificultad-orinar-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dificultad-orinar-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Sangre en la orina?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sangre-orina-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="sangre-orina-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sangre-orina-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="sangre-orina-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Dolor o rigidez en huesos y/o articulaciones?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dolor-rigidez-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dolor-rigidez-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dolor-rigidez-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dolor-rigidez-no">No</label>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-check-label">¿Dificultad para moverse?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dificultad-mover-si" value="si" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dificultad-mover-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dificultad-mover-no" value="no" onclick="toggleCheckbox(this)">
+                        <label class="form-check-label" for="dificultad-mover-no">No</label>
+                    </div>
+                </div>
+            
+                <!-- Botón de envío -->
+                <button type="submit" class="btn btn-primary sticky-btn mt-3" aria-label="Enviar formulario">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar
+                </button>
+            </form>
+            
+            
     </div>
+            
 
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        function validarSeleccion(inputPrefix, noneId, errorMessage) {
-            const seleccionados = document.querySelectorAll(`input[type="checkbox"][id^="${inputPrefix}"]:checked`).length > 0 || document.getElementById(noneId).checked;
-            if (!seleccionados) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: errorMessage,
-                });
-                return false;
-            }
-            return true;
-        }
-
-        document.getElementById('cuestionario-historia-clinica-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const alergiasValido = validarSeleccion('alergia-', 'sin-alergias', 'Por favor, seleccione al menos una alergia o marque "Sin alergias".');
-            const enfermedadesValido = validarSeleccion('asma', 'sin-enfermedades', 'Por favor, seleccione al menos una enfermedad o marque "Sin enfermedades".');
-
-            const otrasEnfermedades = document.getElementById('otras-enfermedades').value.trim();
-            const otrasEnfermedadesValido = otrasEnfermedades !== '' || document.getElementById('sin-otras-enfermedades').checked;
-
-          if (!alergiasValido) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Por favor, seleccione al menos una alergia o marque "Sin alergias".',
-                });
-            } else if (!enfermedadesValido) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Por favor, seleccione al menos una enfermedad o marque "Sin enfermedades".',
-                });
-            } else
-            if (!otrasEnfermedadesValido) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Por favor, complete el campo de otras enfermedades o marque "Sin otras enfermedades".',
-                });
-            } else if (alergiasValido && enfermedadesValido) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Formulario enviado',
-                    text: 'La información ha sido registrada correctamente.',
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        this.reset();
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="script-histori-clinica.js"></script>
 </body>
 
 </html>
